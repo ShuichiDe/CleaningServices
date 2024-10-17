@@ -48,4 +48,10 @@ public class ServiceServiceImpl implements ServiceService {
         Service serviceToDelete = getServiceById(id);
         serviceRepository.delete(serviceToDelete);
     }
+    @Override
+    public List<Service> searchServices(String keyword) {
+        return serviceRepository.findByServiceNameContainingIgnoreCase(keyword);
+    }
+
+
 }

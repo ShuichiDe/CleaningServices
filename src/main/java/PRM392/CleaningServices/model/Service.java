@@ -1,4 +1,5 @@
 package PRM392.CleaningServices.model;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -9,8 +10,6 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Builder
 public class Service {
 
@@ -18,10 +17,17 @@ public class Service {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long servicesId;
 
+    @Column(nullable = false)
     private String serviceName;
+
     private String description;
+
+    @Column(nullable = false)
     private Double price;
+
+    @Column(nullable = false)
     private Integer duration; // Duration in minutes
+
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
 }

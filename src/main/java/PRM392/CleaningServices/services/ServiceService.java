@@ -10,5 +10,5 @@ public interface ServiceService {
     Service getServiceById(Long id);
     Service updateService(Long ServiceId, Service service);
     void deleteServiceById(Long id);
-
+    List<Service> searchServices(String keyword);
 }
